@@ -1,0 +1,14 @@
+<p>user works!</p>
+<table  border="3px">
+    <tr style="background-color: cornflowerblue; font-weight: bold;">
+        <td>Name</td>
+        <td>Id</td>
+        <td>Department</td>
+    </tr>
+    <tr *ngFor="let v of value">
+        <td>{{v.name}}</td>
+        <td>{{v.id}}</td>
+        <td>{{v.dept}}</td>
+
+    </tr>
+</table>

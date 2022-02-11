@@ -1,0 +1,30 @@
+<p>user works!</p>
+<button (click)="clear()">Clear</button>
+<button (click)="todo()">TodoList</button>
+<button (click)="comp()">Complete</button>
+
+<table border="2px" [ngSwitch]="toDo">
+    <thead>
+        <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody *ngSwitchCase="'true'">
+        <tr *ngFor="let v of value1"  >
+            <td *ngIf="v.completed">{{v.id}}</td>
+            <td *ngIf="v.completed">{{v.title}}</td>
+            <td *ngIf="v.completed">{{v.completed}}</td>   
+        </tr>
+    </tbody> 
+    <tbody *ngSwitchCase="'false'">  
+    <tr *ngFor="let v of value2">
+        <td *ngIf="!v.completed">{{v.id}}</td>
+        <td *ngIf="!v.completed">{{v.title}}</td>
+        <td *ngIf="!v.completed">{{v.completed}}</td>
+    </tr>
+</tbody>
+</table>
+
+

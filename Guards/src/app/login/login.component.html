@@ -1,0 +1,16 @@
+<p>login works!</p>
+<p>register works!</p>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">FullName</label>
+      <input #fname="ngModel" name="fname" ngModel required pattern="[a-z A-Z]+$" type="text" class="form-control">
+      <span  *ngIf="fname.invalid && fname.touched" style="color: red;">enter valid full name</span>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Create Password</label>
+      <input #pass="ngModel" name="pass" ngModel required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$*&-_]).{8,32}$" type="password" class="form-control">
+      <span  *ngIf="pass.invalid && pass.touched" style="color: red;">create valid password</span>
+
+    </div> 
+<button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+</form>

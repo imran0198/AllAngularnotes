@@ -1,0 +1,40 @@
+<p>registration works!</p>
+<div class="container">
+    <div class="col-md-06">
+<form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">FullName:</label>
+      <input formControlName="fname" name="fname" type="email" class="form-control" >
+      <span *ngIf="fname.invalid && fname.touched" style="color: red;">enter valid full name</span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email@:</label>
+        <input formControlName="email" name="email" type="email" class="form-control" >
+        <span *ngIf="email.invalid && email.touched" style="color: red;">enter valid email name</span>
+    </div>
+    <div>
+        <label for="gender" >Gender</label> <br>
+        <input formControlName="gender" name="gender" type="radio" value="male">Male
+        <input formControlName="gender" name="gender" type="radio" value="female">FeMale
+        <span *ngIf="gender.invalid && gender.touched" style="color: red;">Select your gender</span>
+
+    </div><br>
+    <div>
+        <label for="qualification">Qualification</label><br>
+        <input formControlName="quali" name="quali" type="checkbox" value="M.Tech">M.Tech
+        <input formControlName="quali" name="quali" type="checkbox" value="SSLC">SSLC
+        <input formControlName="quali" name="quali" type="checkbox" value="PUC">PUC
+        <input formControlName="quali" name="quali" type="checkbox" value="Diploma">Diploma
+        <input formControlName="quali" name="quali" type="checkbox" value="B.E">B.E
+        <span *ngIf="quali.invalid && quali.touched" style="color: red;">Select your Qualification</span>
+    </div><br>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Create Password</label>
+        <input formControlName="Password" name="Password" type="email" class="form-control" >
+        <span *ngIf="Password.invalid && Password.touched" style="color: red;">create valid password minmum 8 characters</span>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>
